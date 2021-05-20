@@ -2,7 +2,7 @@
 library(scales)
 
 #Set working directory
-setwd("~/Google Drive/Bioinformatics/HZAR/HC_coloration_paper_March292021/Kevin_pops3_4/full_bco2_chromosome_clines")
+setwd("~/your/working/directory/path")
 
 all_clines <- read.delim("filtered_clines.tsv")
 
@@ -27,15 +27,10 @@ for (i in 2:ncol(all_clines)){
         col=alpha('black',0.25),
         lwd=2)
 }
-# Add the BCO2 SNP
-bco2  <- 'X122394_27'
+# Add the a SNP of interest you want to highlight on the graph
+snp  <- 'X122394_27'
 kms <- all_clines$kms
-afq <- all_clines[,bco2]
+afq <- all_clines[,snp]
 lines(kms, afq, lwd=4, col=alpha('firebrick',0.8))
 
-# Add the RDH10 SNP
-#rdh10  <- 'X'
-#kms <- all_clines$kms
-#afq <- all_clines[,rdh10]
-#lines(kms, afq, lwd=4, col=alpha('firebrick',0.8))
 
